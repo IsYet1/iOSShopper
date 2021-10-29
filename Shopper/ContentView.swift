@@ -21,7 +21,10 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        VStack {
+                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                            Text("Item at \(item.itemName!)")
+                        }
                     } label: {
                         Text(item.timestamp!, formatter: itemFormatter)
                     }
